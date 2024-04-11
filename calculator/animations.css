@@ -1,0 +1,65 @@
+.appearence {
+    animation-name: appearence;
+    animation-duration: 1.5s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes appearence{
+    0% {
+        opacity: 0;
+        transform: scale(0.75, 0.75)
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1)
+    }
+}
+
+
+.ripple--numbers {
+    background-color: #FF5252FF;
+    color: white;
+    background-position: center;
+    transition: background 0.8s, transform 0.5s ease-out;
+}
+.ripple--numbers:hover {
+    background: #FF5252FF radial-gradient(circle, transparent 1%, #FF5252FF 1%) center/15000%;
+    transform: scale(1.2);
+}
+.ripple--numbers:active {
+    background-color: rgb(255, 143, 143);
+    background-size: 100%;
+    transition: background 0s, transform 0.5s ease-out;
+}
+
+
+.ripple--operations {
+    background-color: white;
+    background-position: center;
+    transition: background 0.8s, transform 0.5s ease-out;
+}
+.ripple--operations:hover {
+    background: white radial-gradient(circle, transparent 1%, white 1%) center/15000%;
+    transform: scale(1.2);
+}
+.ripple--operations:active {
+    background-color: silver;
+    background-size: 100%;
+    transition: background 0s, transform 0.5s ease-out;
+}
+
+
+.ripple--specials {
+    background-color: #FFC107FF;
+    background-position: center;
+    transition: background 0.8s, transform 0.5s ease-out;
+}
+.ripple--specials:hover {
+    background: #FFC107FF radial-gradient(circle, transparent 1%, #FFC107FF 1%) center/15000%;
+    transform: scale(1.2);
+}
+.ripple--specials:active {
+    background-color: rgb(255, 214, 93);
+    background-size: 100%;
+    transition: background 0s, transform 0.5s ease-out;
+}
