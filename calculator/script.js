@@ -78,6 +78,10 @@ function setSpecEvent(button) {
             break
         case ('back'):
             displayHistory.value = displayHistory.value.slice(0, -1)
+            break
+        case ('copy'):
+            displayHistory.value = displayCurrent.value
+            break
     }
 }
 

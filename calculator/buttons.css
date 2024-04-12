@@ -1,5 +1,5 @@
 .button--circle {
-    margin: 0 0 0.9vw 0.9vw;
+    margin: 0 0 0.85vw 0.85vw;
     width: 5vw;
     height: 5vw;
     border-radius: 50%;
@@ -9,10 +9,18 @@
 }
 
 .button--square {
-    margin: 0 0 0.9vw 0.9vw;
+    margin: 0 0 0.85vw 0.85vw;
     width: 5vw;
     height: 5vw;
-    border-radius: 10%;
+    border: none;
+    font-size: 175%;
+    cursor: pointer;
+}
+
+.button--big-square {
+    margin: 0 0 0.85vw 0.85vw;
+    width: 23.4vw;
+    height: 5vw;
     border: none;
     font-size: 175%;
     cursor: pointer;

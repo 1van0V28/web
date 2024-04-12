@@ -58,6 +58,11 @@
     background: #FFC107FF radial-gradient(circle, transparent 1%, #FFC107FF 1%) center/15000%;
     transform: scale(1.2);
 }
+
+.button--big-square:hover {
+    transform: scale(1.04);
+}
+
 .ripple--specials:active {
     background-color: rgb(255, 214, 93);
     background-size: 100%;
