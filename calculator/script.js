@@ -5,15 +5,20 @@ const operButtons = document.querySelectorAll(".ripple--operations")
 const specButtons = document.querySelectorAll(".ripple--specials")
 
 let timeMain = 0.1
+//массив заполняется по мере выполнения функций numAnimateEvent() и operAnimateEvent()
+let symbols = []
+
 
 //применяем анимации и события для кнопок цифр
 function numAnimateEvent(){
     numButtons.forEach((button) => {
         button.setAttribute('style', `animation-delay: ${timeMain}s`)
         button.addEventListener('click', setNumsEvent)
+        symbols.push(button.textContent)
         timeMain += 0.1
     })
 }
+
 
 //применяем анимации и события для кнопок операций
 function operAnimateEvent() {
@@ -21,9 +26,11 @@ function operAnimateEvent() {
     operButtons.forEach((button) => {
         button.setAttribute('style', `animation-delay: ${timeOper}s`)
         button.addEventListener('click', setOpersEvent)
+        symbols.push(button.textContent)
         timeOper += 0.1
     })
 }
+
 
 //применяем анимации и события для специальных кнопок
 function specAnimateEvent() {
@@ -35,11 +42,13 @@ function specAnimateEvent() {
     })
 }
 
+
 //устанавливаем событие при нажатии цифр
 function setNumsEvent(button) {
     let buttonName = button.target.textContent
     displayHistory.value += buttonName
 }
+
 
 //устанавливаем событие при нажатии операций
 function setOpersEvent(button) {
@@ -58,6 +67,7 @@ function setOpersEvent(button) {
     displayHistory.value += buttonName
 }
 
+
 //устанавливаем событие при нажатии специальной кнопки
 function setSpecEvent(button) {
     let buttonName = button.target.textContent
@@ -71,6 +81,21 @@ function setSpecEvent(button) {
     }
 }
 
+//ввод элементов с клавиатуры
+function keydownEvent() {
+    document.addEventListener('keydown', (button) => {
+        if (button.key === 'Backspace') {
+            displayHistory.value = displayHistory.value.slice(0, -1)
+        } else if (button.key === '=') {
+            displayCurrent.value = eval(displayHistory.value)
+        } else if (symbols.includes(button.key) || button.key === '/' || button.key === '*') {
+            displayHistory.value += button.key
+        }
+    })
+}
+
+
 numAnimateEvent()
 operAnimateEvent()
 specAnimateEvent()
+keydownEvent()
